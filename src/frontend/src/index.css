@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Teal-focused palette */
+    --background: 0.98 0.005 200;
+    --foreground: 0.18 0.02 220;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 220;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 220;
+    --primary: 0.58 0.14 196;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.94 0.02 196;
+    --secondary-foreground: 0.3 0.08 196;
+    --muted: 0.95 0.01 200;
+    --muted-foreground: 0.52 0.02 210;
+    --accent: 0.92 0.04 196;
+    --accent-foreground: 0.3 0.1 196;
+    --destructive: 0.58 0.22 27;
+    --destructive-foreground: 1 0 0;
+    --border: 0.88 0.02 200;
+    --input: 0.91 0.02 200;
+    --ring: 0.58 0.14 196;
+
+    /* chart */
+    --chart-1: 0.58 0.14 196;
+    --chart-2: 0.65 0.18 280;
+    --chart-3: 0.7 0.16 50;
+    --chart-4: 0.65 0.13 145;
+    --chart-5: 0.6 0.2 15;
+
+    /* sidebar */
+    --sidebar: 0.96 0.01 200;
+    --sidebar-foreground: 0.18 0.02 220;
+    --sidebar-primary: 0.58 0.14 196;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.92 0.03 196;
+    --sidebar-accent-foreground: 0.3 0.08 196;
+    --sidebar-border: 0.88 0.02 200;
+    --sidebar-ring: 0.58 0.14 196;
+
+    /* custom category colors */
+    --family: 0.62 0.14 196;
+    --friend: 0.62 0.18 280;
+    --work: 0.62 0.16 50;
+    --other: 0.55 0.01 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+}
