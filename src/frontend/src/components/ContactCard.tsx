@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Check,
   Copy,
+  Map as MapIcon,
   MapPin,
   MapPinOff,
   Pencil,
@@ -79,6 +80,8 @@ export default function ContactCard({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.mobileNumber)}`;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -145,6 +148,16 @@ export default function ContactCard({
                     {cat.label}
                   </Badge>
                   <div className="flex gap-1">
+                    <a
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Search on Google Maps"
+                      data-ocid={`contact.maps_button.${index + 1}`}
+                      className="inline-flex items-center justify-center h-7 w-7 rounded-md text-sky-600 hover:bg-sky-50 hover:text-sky-700 transition-colors"
+                    >
+                      <MapIcon className="w-3.5 h-3.5" />
+                    </a>
                     <Button
                       variant="ghost"
                       size="icon"
